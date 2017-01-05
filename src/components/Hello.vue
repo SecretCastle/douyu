@@ -1,8 +1,14 @@
 <template>
   <div class="hello">
-    <div>{{ msg }}</div>
-    <div class="">
-        {{roomlist}}
+    <div class="roomList">
+        <li v-for="item in roomlist">
+            <div class="pic">
+                <img :src="item.room_src" alt="">
+            </div>
+            <div class="title">
+                {{item.room_name}}
+            </div>
+        </li>
     </div>
   </div>
 </template>
@@ -15,7 +21,8 @@ export default {
   data () {
     return {
       msg: "hello world",
-      roomlist : {}
+      roomlist : {},
+      listLen : 0
     }
   },
   created(){
@@ -29,6 +36,7 @@ export default {
               }
           }
           this.$set(this,"roomlist",res.data.data);
+          this.$set(this,"listLen",res.data.data.length);
       });
   }
 }
@@ -52,5 +60,28 @@ li {
 
 a {
   color: #42b983;
+}
+
+.roomList{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap:wrap;
+    padding: 10px 0
+}
+
+.roomList li{
+    width: 49%;
+    margin: 0.5%;
+}
+.roomList li img{
+    width: 100%;
+}
+.roomList li .title{
+    line-height: 30px;
+    font-size: 12px;
+    overflow: hidden;
+    height: 30px;
 }
 </style>
