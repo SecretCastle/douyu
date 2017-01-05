@@ -17,7 +17,7 @@
 const reqURL = "http://open.douyucdn.cn/api/RoomApi/live";
 
 export default {
-  name: 'hello',
+  name: 'list',
   data () {
     return {
       msg: "hello world",

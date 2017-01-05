@@ -28,6 +28,20 @@ module.exports = {
             pathRewrite: {
                 '^/live': '/live'
             }
+        },
+        '/game': {
+            target: 'http://open.douyucdn.cn/api/RoomApi',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/game': '/game'
+            }
+        },
+        '/room': {
+            target: 'http://open.douyucdn.cn/api/RoomApi',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/room': '/room'
+            }
         }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
