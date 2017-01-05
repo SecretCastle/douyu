@@ -18,8 +18,9 @@ Vue.use(VueRouter);
 // })
 
 const routes =[
-    { path : '/foo' , component : Home},
-    { path : '/bar' , component : List}
+    { path : '/' , component : Home},
+    { path : '/home' , component : Home},
+    { path : '/list' , component : List}
 ];
 
 const router = new VueRouter({

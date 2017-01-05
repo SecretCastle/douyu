@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <router-link to="/foo">Go to Foo</router-link>
-    <router-link to="/bar">Go to Bar</router-link>
+    <router-link to="/home">分类</router-link>
+    <router-link to="/list">全部</router-link>
     <router-view></router-view>
   </div>
 </template>
