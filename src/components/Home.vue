@@ -1,7 +1,7 @@
 <template lang="html">
     <div class="roomList">
         <li v-for="item in typeList">
-            <div class="pic">
+            <div @click = "toSup(item.cate_id)">
                 <img :src="item.game_src" alt="">
             </div>
             <div class="title">
@@ -24,6 +24,7 @@ export default {
             method : "GET",
             credentials : true
         }).then(function(res){
+
             if(res){
                 if(typeof res === "string"){
                     res = JSON.parse(res);
@@ -31,6 +32,11 @@ export default {
             }
             this.$set(this,'typeList',res.data.data);
         });
+    },
+    methods:{
+        toSup (param){
+            this.$router.push({name : 'room' , params :{ type : param}});
+        }
     }
 }
 </script>
@@ -39,15 +45,17 @@ export default {
 .roomList{
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
     flex-wrap:wrap;
-    padding: 10px 0
+    padding: 10px 0;
+
 }
 
 .roomList li{
     width: 49%;
     margin: 0.5%;
+    list-style: none;
 }
 .roomList li img{
     width: 100%;

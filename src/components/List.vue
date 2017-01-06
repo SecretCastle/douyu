@@ -1,5 +1,4 @@
 <template>
-  <div class="hello">
     <div class="roomList">
         <li v-for="item in roomlist">
             <div class="pic">
@@ -10,12 +9,9 @@
             </div>
         </li>
     </div>
-  </div>
 </template>
 
 <script>
-const reqURL = "http://open.douyucdn.cn/api/RoomApi/live";
-
 export default {
   name: 'list',
   data () {
@@ -65,10 +61,11 @@ a {
 .roomList{
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
     flex-wrap:wrap;
-    padding: 10px 0
+    padding: 10px 0;
+
 }
 
 .roomList li{
