@@ -14,11 +14,11 @@
 <script>
 export default {
   name: 'list',
+  props: ['src'],
   data () {
     return {
       msg: "hello world",
-      roomlist : {},
-      listLen : 0
+      roomlist : {}
     }
   },
   created(){
@@ -32,7 +32,6 @@ export default {
               }
           }
           this.$set(this,"roomlist",res.data.data);
-          this.$set(this,"listLen",res.data.data.length);
       });
   }
 }

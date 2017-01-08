@@ -10,15 +10,16 @@ Vue.use(VueRouter);
 const routes =[
     {
         path : '/' ,
-        component : Home
+        name : 'list',
+        component : List
     },
     {
         path : '/list' ,
-        component : Home
+        component : List
     },
     {
         path : '/home' ,
-        component : List
+        component : Home
     },
     {
         path : '/find' ,

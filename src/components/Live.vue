@@ -1,10 +1,10 @@
 <template lang="html">
-    <h1>我是菜鸡</h1>
+
 </template>
 
 <script>
 export default {
-    name : 'me',
+    name : 'live',
     data(){
         return{
             
@@ -13,6 +13,5 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-
+<style lang="css">
 </style>

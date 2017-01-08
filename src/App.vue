@@ -5,15 +5,24 @@
           <div class="showArea">
             <router-view></router-view>
           </div>
-          <div class="aui-tab" id="tab">
-              <router-link class="aui-tab-item" to="/home">全部</router-link>
-              <router-link class="aui-tab-item" to="/list">分类</router-link>
+          <div class="aui-tab" id="tab" v-if="showTabBottom">
+              <router-link class="aui-tab-item" to="/list">全部</router-link>
+              <router-link class="aui-tab-item" to="/home">分类</router-link>
               <router-link class="aui-tab-item" to="/find">发现</router-link>
               <router-link class="aui-tab-item" to="/me">我</router-link>
           </div>
       </div>
   </div>
 </template>
+<script type="text/javascript">
+    export default {
+        data() {
+            return {
+                showTabBottom : true
+            }
+        }
+    }
+</script>
 <style>
 @import './assets/aui.2.0.css';
 #app {

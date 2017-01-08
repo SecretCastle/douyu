@@ -38,6 +38,7 @@ export default {
                     if(typeof res === "string"){
                         res = JSON.parse(res);
                     }
+                    console.log(res.data.data);
                     this.$set(this,"roomlist",res.data.data);
                 }
             });
