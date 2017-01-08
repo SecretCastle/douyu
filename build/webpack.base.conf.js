@@ -65,7 +65,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+       },{
+           test : require.resolve(__dirname,'../src/utils/popup'), //增加一个第三方js，暴露alert函数和confirm函数
+           loader : 'exports?alert|confirm'
+       }
     ]
   },
   vue: {

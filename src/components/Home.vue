@@ -1,5 +1,5 @@
 <template lang="html">
-    <div class="roomList">
+    <div class="typeList">
         <li v-for="item in typeList">
             <div @click = "toSup(item.cate_id)">
                 <img :src="item.game_src" alt="">
@@ -41,30 +41,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
-.roomList{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap:wrap;
-    padding: 10px 0;
+<style scoped>
 
-}
 
-.roomList li{
-    width: 49%;
-    margin: 0.5%;
-    list-style: none;
-}
-.roomList li img{
-    width: 100%;
-}
-.roomList li .title{
-    line-height: 30px;
-    font-size: 12px;
-    overflow: hidden;
-    height: 30px;
-    text-align: center;
-}
 </style>

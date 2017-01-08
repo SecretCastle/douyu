@@ -1,18 +1,20 @@
 <template lang="html">
-    {{roomlist}}
     <div class="roomList">
-        <li v-for="item in roomlist">
+        <li v-for="item in roomlist" @click = "go()">
             <div class="pic">
                 <img :src="item.room_src" alt="">
             </div>
             <div class="title">
-                {{item.room_name}}
+                <span class="liveName">{{item.room_name}}</span>
+                <span>主播:{{item.nickname}}</span>
+                <span>在线人数:{{item.online}}</span>
             </div>
         </li>
     </div>
 </template>
 
 <script>
+import tools from "../utils/tools";
 export default {
     name : "room",
     data () {
@@ -38,39 +40,29 @@ export default {
                     if(typeof res === "string"){
                         res = JSON.parse(res);
                     }
-                    console.log(res.data.data);
                     this.$set(this,"roomlist",res.data.data);
                 }
             });
+        },
+        go(param){
+            if(param){
+                //code later
+            }else{
+                // in this method we define dialog wrap
+                tools.dialog({
+                    title:'提示',
+                    content:'还在二维空间徘徊～～',
+                    button:['cancel','ok']
+                },function(res){
+                    console.log(res);
+                });
+            }
         }
-    }
+    },
+
 }
 </script>
 
-<style lang="css">
-.roomList{
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap:wrap;
-    padding: 10px 0;
+<style scoped>
 
-}
-
-.roomList li{
-    width: 49%;
-    margin: 0.5%;
-    list-style: none;
-}
-.roomList li img{
-    width: 100%;
-}
-.roomList li .title{
-    line-height: 30px;
-    font-size: 12px;
-    overflow: hidden;
-    height: 30px;
-    text-align: center;
-}
 </style>
