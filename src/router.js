@@ -5,6 +5,8 @@ import List from './components/List';
 import Find from './components/Find';
 import Me   from './components/Me';
 import Room from './components/Room';
+import Items from './components/Items';
+
 
 Vue.use(VueRouter);
 const routes =[

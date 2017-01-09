@@ -1,22 +1,12 @@
 <template lang="html">
     <div class="roomList">
-        <li v-for="item in roomlist" @click = "go()">
-            <div class="pic">
-                <img :src="item.room_src" alt="">
-            </div>
-            <div class="title">
-                <span class="liveName">{{item.room_name}}</span>
-                <span>主播:{{item.nickname}}</span>
-                <span>在线人数:{{item.online}}</span>
-            </div>
-        </li>
+        <list-item v-for="item in roomlist" :message = "item" ></list-item>
     </div>
 </template>
 
 <script>
-import tools from "../utils/tools";
+import Items from "./Items";
 export default {
-    name : "room",
     data () {
       return {
         roomlist : {}
@@ -43,22 +33,11 @@ export default {
                     this.$set(this,"roomlist",res.data.data);
                 }
             });
-        },
-        go(param){
-            if(param){
-                //code later
-            }else{
-                // in this method we define dialog wrap
-                tools.dialog({
-                    title:'提示',
-                    content:'还在二维空间徘徊～～',
-                    button:['cancel','ok']
-                },function(res){
-                    console.log(res);
-                });
-            }
         }
     },
+    components:{
+        'list-item' : Items
+    }
 
 }
 </script>
