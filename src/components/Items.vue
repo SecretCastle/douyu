@@ -7,6 +7,7 @@
             <span class="liveName">{{message.room_name}}</span>
             <span>主播:{{message.nickname}}</span>
             <span>在线人数:{{message.online}}</span>
+            <span>主播ID:{{message.owner_uid}}</span>
         </div>
     </li>
 </template>
